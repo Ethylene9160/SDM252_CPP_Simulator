@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Interactive Web Page</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .quiz-container { margin-bottom: 20px; }
+  .quiz-title { font-weight: bold; }
+  .quiz-content { display: none; }
+  .quiz-toggle { cursor: pointer; color: blue; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <div class="quiz-title">CS329 Machine Learning Quiz 4</div>
+  <div class="quiz-content">
+    <p>Content for Quiz 4... (add your content here)</p>
+  </div>
+  <div class="quiz-toggle">Read more</div>
+</div>
+
+<div class="quiz-container">
+  <div class="quiz-title">CS329 Machine Learning Quiz 3</div>
+  <div class="quiz-content">
+    <p>Content for Quiz 3... (add your content here)</p>
+  </div>
+  <div class="quiz-toggle">Read more</div>
+</div>
+
+<!-- Repeat the block above for as many quizzes as you have -->
+
+<script>
+  // This script toggles the visibility of the quiz content
+  document.querySelectorAll('.quiz-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      var content = this.previousElementSibling;
+      var isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      this.textContent = isVisible ? 'Read more' : 'Read less';
+    });
+  });
+</script>
+
+</body>
+</html>
