@@ -2,7 +2,7 @@
 
 * iostream is a standard C++ input/output library, consisting of a collection of related classes that support input and output to the console and to files.
 
-* If the value of the condition being tested is **an integral value**, we can replace the if-else-if set of clauses with a switch statement.
+* If the value of the condition being tested is **an integer value**, we can replace the if-else-if set of clauses with a switch statement.（不考）
 
 * continue statement short-circuits the remaining execution of the current iteration.
 
@@ -28,6 +28,8 @@
   * When the function completes, memory is discarded and the objects no longer exist.
 
 * **Scope**: The region of the program in which an object is visible is called its scope.
+
+* **Extent** in C++ refers to the lifetime or duration for which a variable or object remains valid or exists in memory.
 
 * The time interval during which memory is allocated for an object is called its **extent.**
 
@@ -127,6 +129,8 @@
 * A class can designate functions/classes as friends. Then the friends of a class can access the private members in the same way as the member functions of that class.(C4 p61, `friend`)
 
 * A **function object** is an object of a class that provides an overloaded instance of the function call operator ().(C4 p69)
+
+* Mutable：variables modified by `mutable` are allowed to be modified in const member functions(C4 p35)
 
 
 
