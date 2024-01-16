@@ -1,0 +1,328 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:A</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+        
+		.highlight { background-color: #ffffcc } /* RIGHT */
+
+        body { font-family: Arial, sans-serif; }
+            .quiz-container { margin-bottom: 20px; }
+            .quiz-title { font-weight: bold; }
+            .quiz-content { display: none; }
+            .quiz-toggle { cursor: pointer; color: blue; text-decoration: underline; }
+
+		</style>
+  </head>
+
+
+
+
+  <body>
+    <!--Add-->
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("#toggle").click(function() {
+        $(this).text($("#content").is(":hidden") ? "����" : "չ��");
+        $("#content").slideToggle();
+    });
+});
+</script>
+<!--End-->
+    </style>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="basic-concept-statement-on-cpp">Basic Concept Statement on CPP</h1>
+<p>In this term, you&#39;re supposted to explain each concept provide. 10 problems are provided, with 2 points each.(Total: 20 score)</p>
+<h2 id="1-explain-basic-principle-when-initialize-a-data-object-">1 Explain basic principle when initialize a data object.</h2>
+<p>A name can be any combination of letters, numbers, and the underscore (_), but cannot begin with a number and cannot be a language keyword.</p>
+<h2 id="2-explain-what-is-called-memory-leak-and-how-could-it-happen-">2 Explain What is called memory leak, and how could it happen.</h2>
+<h2 id="3-write-out-the-output-">3 Write out the output.</h2>
+<pre><code class="lang-c++">int a = 5/3;
+std::cout&lt;&lt;a&lt;&lt;std::endl;
+</code></pre>
+<p>output:<code>1</code></p>
+<h2 id="4-explain-conditional-operator-">4 Explain Conditional Operator ( ? : )</h2>
+<p>Take <code>( expr ? execute_if_expr_is_true : execute_if_expr_is_false );</code> for example.</p>
+<p>If expr evaluates to true, the expression following the question mark is executed. If expr evaluates to false, the expression following the colon is executed</p>
+<p>Remark:  Any nonzero value is treated as true.</p>
+<h2 id="5-what-is-a-pointer-">5 What is a pointer?</h2>
+<p>A pointer holds a memory address, something like, e.g., 0x00a0fb64.</p>
+<h2 id="6-what-is-scope-">6 What is <code>scope</code>?</h2>
+<p>The region of the program in which an object is visible is called its scope.</p>
+<h2 id="7-explain-why-declare-the-second-parameter-as-a-pointer-to-an-object-instead-of-a-reference-">7 Explain: why declare the second parameter as a pointer to an object instead of a reference?</h2>
+<pre><code class="lang-c++">void bubble_sort(vector&lt;int&gt;&amp; vec, ofstream* ofilptr = 0)
+{
+// ......
+if (ofilptr)
+(*ofilptr) &lt;&lt; &quot;about to call swap! ix: &quot; &lt;&lt; ix &lt;&lt; &quot; jx: &quot; &lt;&lt; jx
+&lt;&lt; &quot;\t swapping: &quot; &lt;&lt; vec[ix] &lt;&lt; &quot; with &quot; &lt;&lt; vec[jx]
+&lt;&lt; endl; // debugging output
+// ......
+}
+</code></pre>
+<p>Reference need to be initialize. If we use reference, then it&#39;s not easy for us to judge whether the outputstream is passed outside the function. For example, here the pointer of the outputstream is initialized as a nullpointer, so we can use <code>if(ofilptr==nullptr)</code> to do the following operations.</p>
+<h2 id="8-what-is-called-function-overload">8 What is called function overload</h2>
+<p>Two or more functions can be given the same name if the parameter list of each function is unique either by the type or by the number of parameters.</p>
+<p>(Same function name with different parameter list)</p>
+
+
+<h2 id="9-what-dose-sentinel-means-in-this-example-">9 What dose <code>sentinel</code> means in this example?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <pre><code class="lang-c++">
+template &lt;typename elemType&gt;
+elemType* find(const elemType* ptr, const elemType* sentinel, const elemType&amp; value)
+{
+    while (ptr != sentinel)
+    { 
+        if (*ptr == value)
+            return ptr;
+        ptr++; 
+    }
+    return 0;
+}
+            </code></pre>
+            <p>the <code>sentinel</code> should mark 1 past the last element of the array, to judge wheter the programmer has finished traversing the array.</p>
+            
+    </div>
+    <div class="quiz-toggle">Expand</div>
+    </div>
+
+<h2 id="10-what-is-called-iterater-">10 What is called iterater?</h2>
+<h2 id="11-why-can-we-access-the-i-th-element-in-a-vector-or-an-array-using-address_of_the_first_elem-i-">11 Why can we access the i-th element in a vector(or an array) using <code>*(address_of_the_first_elem+i)</code>?</h2>
+<p>A vector holds its elements in a <strong>contiguous area</strong> of memory.</p>
+<h2 id="12-what-is-the-use-of-end-in-containers-">12 What is the use of <code>end()</code> in containers?</h2>
+<p>returns an iterator that addresses <strong>1 past</strong> the last element.（返回最后一个元素的后面一位的地址，类比题�?9.�?</p>
+
+
+<!--1-13-->
+<h2 id="13-what-is-a-constructor-">13 What is a constructor?</h2>
+<div class="quiz-container">
+<div class="quiz-content">
+    <p>Constructors are special member functions that are called to initialize the object.</p>
+</div>
+<div class="quiz-toggle">Expand</div>
+</div>
+
+
+
+<!-- 1-14 -->
+<h2 id="14-what-is-a-copy-constructor-">14 What is a copy constructor?</h2>
+
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>A copy constructor is a member function that initializes an object using another object of the same class.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+    </div>
+
+<!--1-15-->
+<h2 id="15-what-s-the-usage-of-the-destructor-">15 What&#39;s the usage of the destructor?</h2>
+
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p> To free resources acquired within the constructor.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+    </div>
+
+
+<h2 id="16-tell-the-difference-between-the-shallow-copy-and-deep-copy-">16 Tell the difference between the shallow copy and deep copy.</h2>
+<h1 id="simple-coding">Simple Coding</h1>
+<p>In this quotes, giving 10 problems(2 pit each), fix the code block.</p>
+<h2 id="1-swap-by-pointers">1 Swap by Pointers</h2>
+<p>Impliment a function below, to swap the values of the space the pointers pointing.</p>
+<pre><code class="lang-c++">void swap(int *a, int *b){
+    //Write down your code.
+    int c = *a;
+    *a = *b;
+    *b = c;
+}
+</code></pre>
+<h2 id="2-print-an-array">2 Print an Array</h2>
+<p>An array (int type), with</p>
+<pre><code class="lang-c++">void printArary(int*array, int size){
+    for(uint32_t i=0; i &lt; size; ++i){
+        //write down your code.
+        cout &lt;&lt; *(array+i) &lt;&lt;&quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+}
+</code></pre>
+<h2 id="3-fix-a-distructor">3 Fix a Distructor</h2>
+<p>When the instance <code>MyClass</code> is to be distroied, we need to delete all the instances in the class. Fix the distructor in this example.</p>
+<pre><code class="lang-c++">struct Point{
+      int x;
+    int y;
+    Point():x(0),y(0){}
+};
+class MyClass{
+    Point*p;
+    MyClass(){
+        this-&gt;p = new Point();
+    }
+    ~Node(){
+        //Write down your code.
+        delete p;
+    } 
+};
+</code></pre>
+<h2 id="4-matrix">4 Matrix</h2>
+<p>Here is a 1D array with length m*n, split it into a 2D array with m rows and n columns, to make it performes like an array.</p>
+<pre><code class="lang-c++">vector&lt;vector&lt;int&gt;&gt; performMatrix(vector&lt;int&gt;&amp;singleVector, int m, int n){
+    vector&lt;vector&lt;int&gt;&gt; matrix(m, vector&lt;int&gt;(n,0));
+    for(int i = 0; i &lt; m; ++m){
+        for(int j = 0; j &lt; n; ++j){
+            //write down your code
+        }
+    }
+    return matrix;
+}
+</code></pre>
+<h2 id="5-initialize-a-float">5 Initialize a Float</h2>
+<p>Initialize 1.3 as a float.</p>
+<pre><code class="lang-c++">float a;
+//assign a as a float.
+//Write down your code.
+a = 1.3f;
+</code></pre>
+<p>also, you can write as <code>a = (float)1.3;</code>,<code>a=float(1.3);</code>,<code>a=float(13.0/10.0)</code>.etc.</p>
+<h2 id="6-help-li-hua-to-fix-the-problem-">6 Help Li Hua to fix the problem.</h2>
+<p>In class <code>Stack</code>, here is a menber finction:</p>
+<pre><code class="lang-c++">class Stack{
+    bool empty(){
+        return m_stack.empty();
+    }
+}
+</code></pre>
+<p>Li Hua want to split into a header file and a cpp file, and this is his header file.</p>
+<pre><code class="lang-c++">class Stack{
+    bool empty();
+}
+</code></pre>
+<p>try to help him fdesign his cpp file. Hint: <strong>define a member function outside the class body</strong></p>
+<pre><code class="lang-c++">//write down your code.
+
+
+</code></pre>
+<p>Ans:</p>
+<pre><code class="lang-c++">inline bool Stack::empty()// bool Stack::empty() is also ok.
+{ 
+    return m_stack.empty(); 
+}
+</code></pre>
+<h1 id="realistic-problem">Realistic Problem</h1>
+<p>Given 2 problems realistic, you&#39;re supposed to get correct codes.</p>
+<h2 id="1-febonacci">1 Febonacci</h2>
+<p>For a sequence <code>1,1,2,3,5,8</code>, let <code>febo(x)</code> return the $x_{th}$ febonacci value. Write down your code.</p>
+<p>Hint: <code>febo(x) = febo(x-1)+febo(x-2)</code>, with <code>febo(1) = 1</code> and <code>febo(2) = 1</code> here.</p>
+<pre><code class="lang-c++">int febo(int x){
+    //write down your code.
+    //The solution use &quot;slide window&quot;, whose complexity is o(1) in space and o(n) in time.
+    int first = 1, second = 1;
+    int new_second = 0;
+    if(x &lt; 3) return 1;
+    for(int i = 0; i &lt; x-2; ++i){
+        //second* = first+second
+        //first* = second
+        new_second = first+second;
+        first = second;
+        second = new_second;
+    }
+    return second;
+}
+</code></pre>
+<h2 id="2">2</h2>
+
+          	</article>
+        </div>
+		</div>
+        <script>
+            // This script toggles the visibility of the quiz content
+            document.querySelectorAll('.quiz-toggle').forEach(function(toggle) {
+              toggle.addEventListener('click', function() {
+                var content = this.previousElementSibling;
+                var isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                this.textContent = isVisible ? 'Expand' : 'Hide';
+              });
+            });
+          </script>
+          
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
