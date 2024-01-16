@@ -1,0 +1,597 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:A</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+
+
+
+        body { font-family: Arial, sans-serif; }
+            .quiz-container { margin-bottom: 20px; }
+            .quiz-title { font-weight: bold; }
+            .quiz-content { display: none; }
+            .quiz-toggle { cursor: pointer; color: blue; text-decoration: underline; }
+
+
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="basic-concept-statement-on-cpp">Basic Concept Statement on CPP</h1>
+<p>In this term, you&#39;re supposted to explain each concept provide. 10 problems are provided, with 2 points each.(Total: 20 score)</p>
+
+<h2 id="1-explain-basic-principle-when-initialize-a-data-object-">Explain basic principle when initialize a data object.</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>A name can be any combination of letters, numbers, and the underscore (_), but cannot begin with a number and cannot be a language keyword.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+  
+
+<h2 id="2-explain-what-is-called-memory-leak-and-how-could-it-happen-">Explain What is called memory leak, and how could it happen.</h2>
+
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>When allocating a memory for a variable, the programmer forget to release the memory after using that variable.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="3-function-declaration">Function declaration</h2>
+<p>What is called the declaration of a function?</p>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>declaration of a function means making function known to compiler.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="4-explain-conditional-operator-">What is the use of continue in loop?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>Skip the rest of the current loop and step into next turn.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+<h2 id="5-what-is-a-pointer-">What is a pointer?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>A pointer holds a memory address, something like, e.g., 0x00a0fb64.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="6-what-is-scope-">What is <code>scope</code>?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>The region of the program in which an object is visible is called its scope.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="7-explain-why-declare-the-second-parameter-as-a-pointer-to-an-object-instead-of-a-reference-">Reference initialization</h2>
+Explain: why declare the second parameter as a pointer to an object instead of a reference?
+<pre><code class="lang-c++">void bubble_sort(vector&lt;int&gt;&amp; vec, ofstream* ofilptr = 0)
+{
+// ......
+    if (ofilptr)
+        (*ofilptr) &lt;&lt; &quot;about to call swap! ix: &quot; &lt;&lt; ix &lt;&lt; &quot; jx: &quot; &lt;&lt; jx
+        &lt;&lt; &quot;\t swapping: &quot; &lt;&lt; vec[ix] &lt;&lt; &quot; with &quot; &lt;&lt; vec[jx]
+    &lt;&lt; endl; // debugging output
+// ......
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>Reference need to be initialize. If we use reference, then it&#39;s not easy for us to judge whether the outputstream is passed outside the function. For example, here the pointer of the outputstream is initialized as a nullpointer, so we can use <code>if(ofilptr==nullptr)</code> to do the following operations.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+<h2 id="8-what-is-called-function-overload">What is called function overload</h2>
+<div class="quiz-container">
+    <div class="quiz-content"><p>Two or more functions can be given the same name if the parameter list of each function is unique either by the type or by the number of parameters.</p>
+        <p>(Same function name with different parameter list)</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="9-what-dose-sentinel-means-in-this-example-">What dose <code>sentinel</code> means in this example?</h2>
+<pre><code class="lang-c++">template &lt;typename elemType&gt;
+elemType* find(const elemType* ptr, const elemType* sentinel,
+const elemType&amp; value)
+{
+    while (ptr != sentinel)
+    { 
+        if (*ptr == value)
+            return ptr;
+        ptr++; 
+    }
+    return 0;
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>the <code>sentinel</code> should mark 1 past the last element of the array, to judge wheter the programmer has finished traversing the array.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="10-what-is-called-iterater-">What is called iterater?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>An iterator is a class object that <strong>points to an element inside the container</strong></p>
+
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+  
+<h2 id="11-why-can-we-access-the-i-th-element-in-a-vector-or-an-array-using-address_of_the_first_elem-i-">Vector Property</h2>
+<p>Why can we access the i-th element in a vector(or an array) using <code>*(address_of_the_first_elem+i)</code>?</p>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>A vector holds its elements in a <strong>contiguous area</strong> of memory.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="12-what-is-the-use-of-end-in-containers-">What is the use of <code>end()</code> in containers?</h2>
+
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>returns an iterator that addresses <strong>1 past</strong> the last element.（返回最后一个元素的后面一位的地址，类比题�?9.�?</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="13-what-is-a-constructor-">What is a constructor?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>Constructors are special member functions that are called to initialize the object.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="14-what-is-a-copy-constructor-">What is a copy constructor?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>A copy constructor is a member function that initializes an object using another object of the same class.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="15-what-s-the-usage-of-the-destructor-">What&#39;s the usage of the destructor?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        
+<p> To free resources acquired within the constructor.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="16-tell-the-difference-between-the-shallow-copy-and-deep-copy-">Tell the difference between the shallow copy and deep copy.</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>Shallow copy only copy values, while deep copy will copy both value of the target object and allocate memory for instances inside the copied target.</p>
+</div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="17-tell-what-is-public-inheritance-">Tell what is public inheritance.</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>Retains public members of the base class as public and the protected members of the base class as protected in the derived class.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="18-tell-the-usage-of-keyword-mutable">Tell the usage of keyword <code>mutable</code></h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>The keyword <code>mutable</code> is used to make a fine distinction between the essential member variables and the non-essential member variables of a class.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="19-stack-memory">Stack memory</h2>
+<p>One day, Li Hua write a function:</p>
+<pre><code class="lang-c++">vector&lt;int&gt;&amp; febon(int pos){
+    vector&lt;int&gt; v;
+    //...
+    return v;
+}
+</code></pre>
+<p>He find the function cannot run successfully. Tell the reason of the problem.</p>
+<div class="quiz-container">
+    <div class="quiz-content">
+
+        <p>vector <code>v</code>  is a local variable, which will be destroyed when the function end.</p>
+        <p>(The correct way is:)</p>
+<pre><code class="lang-c++">vector&lt;int&gt; febon(int pos){
+    vector&lt;int&gt; v;
+    //...
+    return v;
+}
+</code></pre>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="20-what-is-a-static-member-variable-">What is a static member variable?</h2>
+<div class="quiz-container">
+    <div class="quiz-content">
+        
+<p>A static member variable inside a class is a single and shared member that is accessible to all the objects of that class.</p>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h1 id="simple-coding">Simple Coding</h1>
+<p>In this quotes, giving 10 problems(2 pit each), fix the code block.</p>
+<h2 id="1-swap-by-pointers">Swap by Pointers</h2>
+<p>Impliment a function below, to swap the values of the space the pointers pointing.</p>
+<pre><code class="lang-c++">void swap(int *a, int *b){
+    //Write down your code.
+
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>ANS:</p>
+<pre><code class="lang-c++">void swap(int *a, int *b){
+    //Write down your code.
+    int c = *a;
+    *a = *b;
+    *b = c;
+}
+</code></pre>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="2-print-an-array">Print an Array</h2>
+<p>An array (int type), with length <code>size</code> as parameter. Print it like: <code>elem1 elem2 ...</code></p>
+<pre><code class="lang-c++">void printArary(int*array, int size){
+    for(uint32_t i=0; i &lt; size; ++i){
+        //write down your code.
+        cout &lt;&lt; *(array+i) &lt;&lt;&quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>ANS:</p>
+<pre><code class="lang-c++">void printArary(int*array, int size){
+    for(uint32_t i=0; i &lt; size; ++i){
+        //write down your code.
+        cout &lt;&lt; *(array+i) &lt;&lt;&quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+}
+        </code></pre>
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="3-fix-a-distructor">Fix a Distructor</h2>
+<p>When the instance <code>MyClass</code> is to be distroied, we need to delete all the instances in the class. Fix the distructor in this example.</p>
+<pre><code class="lang-c++">struct Entity{
+    int x;
+    int y;
+    int z;
+    Entity():x(0),y(0),z(0){}
+};
+class ScopedPtr{
+    Entity*e;
+    MyClass(Entity*e){
+        this-&gt;e = e;
+    }
+    ~Node(){
+        //Write down your code.
+
+    } 
+};
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+    <p>ANS:</p>
+    <pre><code class="lang-c++">
+struct Entity{
+    int x;
+    int y;
+    int z;
+    Entity():x(0),y(0),z(0){}
+};
+class ScopedPtr{
+    Entity*e;
+    MyClass(Entity*e){
+        this-&gt;e = e;
+    }
+    ~Node(){
+        //Write down your code.
+        delete e;
+    } 
+};
+    </code></pre>
+</div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+
+<h2 id="4-const-and-mutable">Const and mutable</h2>
+<p>In class <code>Triangular</code>, I hope a variable named <code>m_next</code> whose type it int to be modified in const member functions. Declare it.</p>
+<pre><code class="lang-c++">class Triangular {
+public:
+    //write down your code.
+
+};
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+        <p>ANS:</p>
+<pre><code class="lang-c++">class Triangular {
+public:
+    //write down your code.
+    mutable int m_next; // non-essential
+};
+</code></pre></div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+<h2 id="5-initialize-a-float">Initialize a Float</h2>
+<p>Initialize 1.3 as a float.</p>
+<pre><code class="lang-c++">float a;
+//assign a as a float.
+//Write down your code.
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+    <p>ANS:</p>
+<pre><code class="lang-c++">float a;
+//assign a as a float.
+//Write down your code.
+a = 1.3f;
+</code></pre>
+<p>also, you can write as <code>a = (float)1.3;</code>,<code>a=float(1.3);</code>,<code>a=float(13.0/10.0)</code>.etc.</p>
+</div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+
+<h2 id="6-help-li-hua-to-fix-the-problem-">Help Li Hua to fix the problem.</h2>
+<p>In class <code>Stack</code>, here is a menber finction:</p>
+<pre><code class="lang-c++">class Stack{
+    bool empty(){
+        return m_stack.empty();
+    }
+}
+</code></pre>
+<p>Li Hua want to split into a header file and a cpp file, and this is his header file.</p>
+<pre><code class="lang-c++">class Stack{
+    bool empty();
+}
+</code></pre>
+<p>try to help him fdesign his cpp file. Hint: <strong>define a member function outside the class body</strong></p>
+<pre><code class="lang-c++">//write down your code.
+
+
+</code></pre>
+
+<div class="quiz-container">
+    <div class="quiz-content">
+<p>Ans:</p>
+<pre><code class="lang-c++">inline bool Stack::empty()// bool Stack::empty() is also ok.
+{ 
+    return m_stack.empty(); 
+}
+</code></pre>        
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+<h2 id="7-design-a-pure-virtual-function-">Design a pure virtual function.</h2>
+<p>Design <code>int elem(int pos) const</code> (a member function of class <code>NumSeq</code>) as a pure virtual funciton</p>
+<pre><code class="lang-c++">class numSeq{
+public:
+    //write down your code.
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+<p>ANS:</p>
+<pre><code class="lang-c++">class numSeq{
+public:
+    //write down your code.
+    virtual int elem(int pos) const = 0;
+}
+</code></pre>        
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="8-type-define">Type define</h2>
+<p>In this scope, I&#39;d like to use <code>demical</code> to represent <code>double</code>. use <code>typedef</code> to help me.</p>
+<pre><code class="lang-c++">//write down your code.
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+<p>ANS:</p>
+<pre><code class="lang-c++">//write down your code.
+typedef double demical;
+</code></pre>
+<p>Hint: <code>typedef original_data_type your_data_type;</code></p>        
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="9-overload-operator">Overload operator</h2>
+<p>Two Triangular iterator class objects are equal if the two <code>m_index</code> are equal, fix the scope.</p>
+<pre><code class="lang-c++">bool ???(const Triangular_iterator&amp; rhs) const{
+    return this-&gt;m_index == rhs.m_index;
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+<p>ANS:</p>
+<pre><code class="lang-c++">bool operator==(const Triangular_iterator&amp; rhs) const{
+    return this-&gt;m_index == rhs.m_index;
+}
+</code></pre>        
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="10-pass-array-name">Pass array name</h2>
+<p>I want to find the pointer of element whose value is 3 and store the address in variable <code>p</code>, using function <code>find</code> as follow. Fix it.</p>
+<pre><code class="lang-c++">template &lt;typename elemType&gt;
+elemType* find(const elemType* ptr, int size, const elemType&amp; value)
+{
+    for (int ix = 0; ix &lt; size; ++ix)
+        if (ptr[ix] == value)
+            return &amp;ptr[ix];
+    return 0;
+}
+
+int main(){
+    int* arr = {2,3,5,10};
+    //write down your code.
+    int* p = ???
+}
+</code></pre>
+<div class="quiz-container">
+    <div class="quiz-content">
+<p>ANS:</p>
+<p><code>int*p = find&lt;int&gt;(arr, 4, 3);</code></p>
+<p>Also, answer can be:<code>int*p = find&lt;int&gt;(arr, sizeof(arr)/sizeof(int), 3);</code></p>        
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+
+<h1 id="realistic-problem">Realistic Problem</h1>
+<p>Given 2 problems realistic, you&#39;re supposed to get correct codes.</p>
+<p>I don&#39;t know how to test...</p>
+<h2 id="1-febonacci">1 Febonacci</h2>
+<p>For a sequence <code>1,2,3,5,8</code>, let <code>febo(x)</code> return the $x_{th}$ febonacci value. Write down your code.</p>
+<p>Hint: <code>febo(x) = febo(x-1)+febo(x-2)</code>, with <code>febon(1) = 1</code> and <code>febon(2) = 2</code> here.</p>
+
+<div class="quiz-container">
+    <div class="quiz-content">
+<pre><code class="lang-c++">int febon(int x){
+    //write down your code.
+    vector&lt;int&gt; elems();
+    elems.push_back(1);
+    elems.push_back(2);
+    for(int i = 2; i &lt; x; ++i){
+        elems.push_back(elems[i-1]+elems[i-2]);
+    }
+    return elems[i-1];
+}
+</code></pre>        
+    </div>
+    <div class="quiz-toggle">Expand</div>
+  </div>
+
+<h2 id="2-inheritance-and-polinomial">2 Inheritance and polinomial</h2>
+<p>Gugugu</p>
+
+          	</article>
+        </div>
+		</div>
+
+        <script>
+            // This script toggles the visibility of the quiz content
+            document.querySelectorAll('.quiz-toggle').forEach(function(toggle) {
+              toggle.addEventListener('click', function() {
+                var content = this.previousElementSibling;
+                var isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                this.textContent = isVisible ? 'Expand' : 'Hide';
+              });
+            });
+          </script>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

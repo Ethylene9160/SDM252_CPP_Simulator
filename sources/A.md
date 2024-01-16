@@ -1,3 +1,5 @@
+Website Version：https://ethylene9160.github.io/CPP_Simulator
+
 # Basic Concept Statement on CPP
 
 In this term, you're supposted to explain each concept provide. 10 problems are provided, with 2 points each.(Total: 20 score)
@@ -6,15 +8,21 @@ In this term, you're supposted to explain each concept provide. 10 problems are 
 
 A name can be any combination of letters, numbers, and the underscore (_), but cannot begin with a number and cannot be a language keyword.
 
+
+
 ## 2 Explain What is called memory leak, and how could it happen.
 
 When allocating a memory for a variable, the programmer forget to release the memory after using that variable.
+
+
 
 ## 3 Function declaration
 
 What is called the declaration of a function?
 
 declaration of a function means making function known to compiler.
+
+
 
 ## 4 Explain Conditional Operator ( ? : )
 
@@ -24,29 +32,37 @@ If expr evaluates to true, the expression following the question mark is execute
 
 Remark:  Any nonzero value is treated as true.
 
+
+
 ## 5 What is a pointer?
 
 A pointer holds a memory address, something like, e.g., 0x00a0fb64.
 
+
+
 ## 6 What is `scope`?
 
 The region of the program in which an object is visible is called its scope.
+
+
 
 ## 7 Explain: why declare the second parameter as a pointer to an object instead of a reference?
 
 ```c++
 void bubble_sort(vector<int>& vec, ofstream* ofilptr = 0)
 {
-// ......
-if (ofilptr)
-(*ofilptr) << "about to call swap! ix: " << ix << " jx: " << jx
-<< "\t swapping: " << vec[ix] << " with " << vec[jx]
-<< endl; // debugging output
-// ......
+	// ......
+	if (ofilptr)
+        (*ofilptr) << "about to call swap! ix: " << ix << " jx: " << jx
+        << "\t swapping: " << vec[ix] << " with " << vec[jx]
+        << endl; // debugging output
+        // ......
 }
 ```
 
 Reference need to be initialize. If we use reference, then it's not easy for us to judge whether the outputstream is passed outside the function. For example, here the pointer of the outputstream is initialized as a nullpointer, so we can use `if(ofilptr==nullptr)` to do the following operations.
+
+
 
 ## 8 What is called function overload
 
@@ -75,9 +91,13 @@ const elemType& value)
 
 the `sentinel` should mark 1 past the last element of the array, to judge wheter the programmer has finished traversing the array.
 
+
+
 ## 10 What is called iterater?
 
 An iterator is a class object that **points to an element inside the container**
+
+
 
 ## 11 Why can we access the i-th element in a vector(or an array) using `*(address_of_the_first_elem+i)`?
 
@@ -245,21 +265,29 @@ class ScopedPtr{
 
 
 
-## 4 Matrix
+## 4 Const and mutable
 
-Here is a 1D array with length m*n, split it into a 2D array with m rows and n columns, to make it performes like an array.
+In class `Triangular`, I hope a variable named `m_next` whose type it int to be modified in const member functions. Declare it.
 
 ```c++
-vector<vector<int>> performMatrix(vector<int>&singleVector, int m, int n){
-    vector<vector<int>> matrix(m, vector<int>(n,0));
-    for(int i = 0; i < m; ++m){
-        for(int j = 0; j < n; ++j){
-            //write down your code
-        }
-    }
-    return matrix;
-}
+class Triangular {
+public:
+    //write down your code.
+    
+};
 ```
+
+ANS:
+
+```c++
+class Triangular {
+public:
+    //write down your code.
+    mutable int m_next; // non-essential
+};
+```
+
+
 
 ## 5 Initialize a Float
 
@@ -340,7 +368,7 @@ public:
 }
 ```
 
-## 8 type define
+## 8 Type define
 
 In this scope, I'd like to use `demical` to represent `double`. use `typedef` to help me.
 
@@ -375,7 +403,32 @@ bool operator==(const Triangular_iterator& rhs) const{
 }
 ```
 
-## 10 
+## 10 Pass array name
+
+I want to find the pointer of element whose value is 3 and store the address in variable `p`, using function `find` as follow. Fix it.
+
+```c++
+template <typename elemType>
+elemType* find(const elemType* ptr, int size, const elemType& value)
+{
+    for (int ix = 0; ix < size; ++ix)
+    	if (ptr[ix] == value)
+    		return &ptr[ix];
+    return 0;
+}
+
+int main(){
+    int* arr = {2,3,5,10};
+    //write down your code.
+    int* p = ???
+}
+```
+
+ANS:
+
+`int*p = find<int>(arr, 4, 3);`
+
+Also, answer can be:`int*p = find<int>(arr, sizeof(arr)/sizeof(int), 3);`
 
 # Realistic Problem
 
